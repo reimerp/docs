@@ -707,7 +707,7 @@ Backlog switchmode1 1; rule1 1
 ```haskell
 Rule1 ON switch1#state=1 DO Backlog Power1 on; ruletimer1 0 ENDON
 ON switch1#state=0 DO ruletimer1 300 ENDON
-ON rules#timer=1 DO Power1 off ENDON
+ON rules#timer=1 DO Power1 0 ENDON
 ```
 
 
@@ -974,7 +974,7 @@ Rule1
   ON tele-TSL2561#Illuminance>175 DO Power1 0 ENDON 
 
 Rule1 1
-```haskell
+```
 
 **Rule 2:** Trigger Rule1 only in the Mornings  
 This ensures that Rule1 is triggered when Timer3 starts (in the morning) and stops when Timer1 starts (in the evenings).  
